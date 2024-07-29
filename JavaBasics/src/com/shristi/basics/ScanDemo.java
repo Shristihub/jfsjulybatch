@@ -16,8 +16,6 @@ public class ScanDemo {
 		System.out.println("City "+city);
 		double salary = scanner.nextDouble();
 		System.out.println("Salary "+salary);
-		
-		
 		scanner.close();
 	}
 	
