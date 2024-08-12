@@ -19,7 +19,7 @@ public class Car extends Vehicle implements IAccessories {
 	}
 
 	@Override
-	void getMileage() {
+  void getMileage() {
 		System.out.println("good mileage ");
 	}
 	// own method
