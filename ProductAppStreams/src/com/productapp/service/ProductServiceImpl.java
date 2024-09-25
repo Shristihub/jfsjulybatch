@@ -1,6 +1,8 @@
 package com.productapp.service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -82,12 +84,13 @@ public class ProductServiceImpl implements IProductService{
 
 	@Override
 	public Map<String, List<Product>> getAllByCategory(String category) throws ProductNotFoundException {
-		products.stream()
-	       .filter(product->product.getBrand().equals(brand))
+		return products.stream()
+	       .filter(product->product.getCategory().equals(category))
 	       .collect(Collectors.toMap(Product::getBrand,product->{
-	    	   return null;
-	       }))
-		return null;
+	    	   List<Product> products = new ArrayList<Product>();
+	    	   products.add(product);
+	    	   return products;
+	       }));
 	}
 
 	@Override

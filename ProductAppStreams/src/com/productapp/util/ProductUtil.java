@@ -9,7 +9,6 @@ import com.productapp.model.Product;
 
 public class ProductUtil {
 	
-	
 
 	public static List<Product> getProducts(){
 		String elect = Category.ELECTRONICS.name();
@@ -28,8 +27,8 @@ public class ProductUtil {
 				new Product("Basket Ball", 20000, 6,sports , LocalDate.of(2024,5,10), "Nike"),
 				new Product("Television", 200000, 7,home , LocalDate.of(2024,5,10), "Samsung"),
 				new Product("Washing Machine", 45000, 8,home , LocalDate.of(2024,5,10), "Samsung"),
-				new Product("Sneakers", 4200, 9,sports , LocalDate.of(2024,7,16), "Adidas"),
-				new Product("Shoes", 5200, 10,mobile , LocalDate.of(2024,10,16), "Puma"),
+				new Product("A Mobile", 4200, 9,mobile , LocalDate.of(2024,7,16), "Samsung"),
+				new Product("S Mobile", 5200, 10,mobile , LocalDate.of(2024,10,16), "Samsung"),
 				new Product("Pencils", 100, 11,stat , LocalDate.of(2024,8,11), "Classmate"),
 				new Product("Notebooks", 200, 12,stat , LocalDate.of(2024,9,16), "Classmate")
 				);
