@@ -1,27 +1,30 @@
 package com.movieapp.service;
 
+import java.util.Comparator;
 import java.util.List;
 
+import com.movieapp.dao.IMovieDao;
+import com.movieapp.dao.MovieDaoImpl;
+import com.movieapp.exceptions.MovieNotFoundException;
 import com.movieapp.model.Movie;
 
 public class MovieServiceImpl implements IMovieService{
 
+	private IMovieDao movieDao = new MovieDaoImpl();
 	@Override
 	public void addMovie(Movie movie) {
-		// TODO Auto-generated method stub
+		movieDao.addMovie(movie);
 		
 	}
 
 	@Override
 	public void updateMovie(int movieId, String format) {
-		// TODO Auto-generated method stub
-		
+		movieDao.updateMovie(movieId, format);
 	}
 
 	@Override
 	public void deleteMovie(int movieId) {
-		// TODO Auto-generated method stub
-		
+		movieDao.deleteMovie(movieId);
 	}
 
 	@Override
@@ -32,14 +35,16 @@ public class MovieServiceImpl implements IMovieService{
 
 	@Override
 	public List<Movie> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Movie> movies = movieDao.findAll();
+		return movies.stream().sorted(Comparator.comparing(Movie::getMovieName)).toList();
 	}
 
 	@Override
 	public List<Movie> getByLanguage(String language) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Movie> movies = movieDao.findAll();
+		if(movies.isEmpty())
+			throw new MovieNotFoundException("no movie found for this launguage");
+	 return movies;
 	}
 
 	@Override

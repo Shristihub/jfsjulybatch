@@ -14,10 +14,9 @@ public class Movie {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Movie(String movieName, Integer movieId, String language, String format, String genre, LocalTime duration) {
+	public Movie(String movieName, String language, String format, String genre, LocalTime duration) {
 		super();
 		this.movieName = movieName;
-		this.movieId = movieId;
 		this.language = language;
 		this.format = format;
 		this.genre = genre;
